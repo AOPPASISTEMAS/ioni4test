@@ -1,0 +1,7 @@
+{
+  "name": "ion-shoppingcart",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

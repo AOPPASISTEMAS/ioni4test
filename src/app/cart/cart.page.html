@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color='dark'>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title >MEUS RESULTADOS</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content padding *ngIf="selectedItems.length">
+  <ion-list>
+    <ion-item color = 'primary' *ngFor="let item of selectedItems" lines="inset">
+      {{ item.count }}x {{ item.name }} - {{ item.price | currency:'REAIS':'symbol' }}
+      <ion-label color ='danger' slot="end" text-right>{{ (item.price * item.count) | currency:'REAIS':'symbol' }}</ion-label>
+    </ion-item>
+    <ion-item>
+      Total: <span slot="end">{{ total | currency:'USD':'symbol' }}</span>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-content padding *ngIf="!selectedItems.length">
+  <div text-center>
+    Your shopping cart is empty...
+  </div>
+</ion-content>
